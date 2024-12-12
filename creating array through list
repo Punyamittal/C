@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(){
+    int list[5];
+    int i,a;
+    for(i=0;i<5;i++){
+        printf("enter numerical elements");
+        scanf("%d",&a);
+        list[i]=a;
+    }
+    for(i=0;i<5;i++){
+        printf("%d",list[i]);
+        printf("\n");
+    }
+    return 0;
+}
