@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+void main(){
+    int a;
+    printf("enter the  number of elements:");
+    scanf("%d",&a);
+    int arr[a];
+    for(int m=0;m<a;m++){
+        scanf("%d",&arr[m]);
+    }
+    for(int m=a-1;m>=0;m--){
+        printf("%d",arr[m]);
+        printf(" ");
+    }
+}
