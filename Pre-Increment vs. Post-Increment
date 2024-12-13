@@ -1,0 +1,16 @@
+/*Pre-Increment vs. Post-Increment:
+Create a program to demonstrate the difference between pre-increment (++a) and post-increment (a++) in an expression.
+*/
+#include <stdio.h>
+void main() {
+    int i=0,j=0;
+    for(i;i<5;i++){
+    printf("%d",i);
+    printf("\n");
+    }
+    for(j;j<5;++j){
+    printf("%d",j);
+    printf("\n")
+    }
+    
+}
