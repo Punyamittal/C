@@ -1,0 +1,33 @@
+/*Temperature Conversion Program:
+Write a program to convert temperatures between Celsius and Fahrenheit using explicit type casting.
+*/
+#include <stdio.h>
+#include <string.h>
+void main() {
+    char f[50],g[50];
+    printf("enter the current type:");
+    scanf("%s",f);
+    printf("\n");
+    printf("enter the final type:");
+    scanf("%s",g);
+    printf("\n");
+    printf("enter the value:");
+    float a;
+    scanf("%f",&a);
+    printf("\n");
+    if(strcmp(f,g)==0){
+        printf("%f",a," is the fianl answer");
+        
+    }
+    else{
+        if (strcmp(f,"f")==0){
+            float result = (a - 32.0) * 5.0 / 9.0;
+            printf("The temperature in Celsius is: %.2f\n", result);
+        }
+        else{
+            float result = (a * 9.0 / 5.0) + 32.0;
+            printf("The temperature in Fahrenheit is: %.2f\n",result);
+        }
+    }
+    
+}
