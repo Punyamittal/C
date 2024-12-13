@@ -1,0 +1,22 @@
+//reversing a string
+#include <stdio.h>
+#include <string.h>
+void reverse(char* str){
+    int l=strlen(str);
+    int a=0,b=l-1;
+    while(b>a){
+        char temp = str[a];
+        str[a] = str[b];
+        str[b] = temp;
+        a++;
+        b--;
+        
+    }
+}
+void main() {
+    char str[50];
+    printf("enter the string:");
+    scanf("%s",str);
+    reverse(str);
+    printf("%s",str);
+}
