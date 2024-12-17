@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+void countCharacterOccurrences(char str[]) {
+    int count[256] = {0};
+    for (int i = 0; str[i] != '\0'; i++) {
+        count[(unsigned char)str[i]]++;
+    }
+    printf("Character Occurrences:\n");
+    for (int i = 0; i < 256; i++) {
+        if (count[i] > 0) {
+            printf("%c: %d\n", i, count[i]);
+        }
+    }
+}
+int main() {
+    char str[] = "hello world";
+    countCharacterOccurrences(str);
+    return 0;
+}
