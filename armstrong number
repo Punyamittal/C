@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    int a,n=0;
+    printf("enter the number:");
+    scanf("%d",&a);
+    if (a!=0){
+        int m;
+        m=a%10;
+        a=a/10;
+        m=m*m*m*m;
+        n=n+m;;
+    printf("%d",n);
+    }
+}
