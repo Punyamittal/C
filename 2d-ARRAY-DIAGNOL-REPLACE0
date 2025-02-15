@@ -1,0 +1,53 @@
+/8Problem Statement
+
+
+
+Rajdeep is exploring matrices. He wants to write a program to display the lower triangular part of a square matrix. You have to assist him in creating the code.
+
+
+
+Write a program that takes an integer N as input and a square matrix of size NxN. Implement the logic to display the lower triangular part of the matrix.
+
+Input format :
+The input consists of a single integer N, representing the size of the square matrix.
+
+The next N lines contain N space-separated integers, representing the elements of the matrix.
+
+Output format :
+The output displays the lower triangular matrix based on the input, with elements above the main diagonal replaced by zeros.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+In the given scenario, the test cases fall under the following constraints:
+
+2 ≤ N ≤ 8
+
+0 ≤ elements ≤ 9*/
+
+\#include<stdio.h>
+int main(){
+    int m;
+    scanf("%d",&m);
+    int r[m][m];
+    for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+            scanf("%d",&r[i][j]);
+        }
+    }
+    for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+            if(i<j){
+                r[i][j]=0;
+            }
+        }
+    }
+    for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+            printf("%d ",r[i][j]);
+        }
+        printf("\n");
+    }
+}
