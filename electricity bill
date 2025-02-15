@@ -1,0 +1,133 @@
+/*Write a C program to generate Electricity bills.
+
+
+
+If the type of the EB connection is Domestic, calculate the amount to be paid as follows:
+
+first 100 units - Rs. 1 per unit
+101-200 units - Rs. 2.50 per unit
+201 -500 units - Rs. 4 per unit
+> 501 units - Rs. 6 per unit
+
+
+If the type of the EB connection is Commercial, calculate the amount to be paid as follows:
+
+first 100 units - Rs. 2 per unit
+101-200 units - Rs. 4.50 per unit
+201 -500 units - Rs. 6 per unit
+> 501 units - Rs. 7 per unit
+
+
+Examples
+
+
+
+Input:
+
+D
+
+150
+
+Output:
+
+Electricity Bill Amount: Rs. 225.00
+
+Explanation:
+
+For a domestic connection with 150 units consumed, the electricity bill amount would be calculated as follows:
+
+first 100 units: Rs. 1.0 per unit = Rs. 100
+next 50 units: Rs. 2.5 per unit = Rs. 125
+Total amount = Rs. 100 + Rs. 125 = Rs. 225.
+
+
+
+Input:
+
+C
+
+600
+
+Output:
+
+Electricity Bill Amount: Rs. 3150.00
+
+Explanation:
+
+For a commercial connection with 600 units consumed, the electricity bill amount would be calculated as follows:
+
+first 100 units: Rs. 2.0 per unit = Rs. 200
+next 100 units: Rs. 4.5 per unit = Rs. 450
+next 300 units: Rs. 6.0 per unit = Rs. 1,800
+remaining 100 units: Rs. 7.0 per unit = Rs. 700
+Total amount = Rs. 200 + Rs. 450 + Rs. 1,800 + Rs. 700 = Rs. 3,150.*/
+#include<stdio.h>
+int main() {
+    int a;
+    char b;
+    float h=0;
+    scanf("%c",&b);
+    scanf("%d",&a);
+    if (b=='C'){
+        if(a>100){
+            h=h+200;
+            a=a-100;
+            if(a>100){
+                h=h+450;
+                a=a-100;
+                if(a>300){
+                    h=h+1800;
+                    a=a-300;
+                    if(a>0){
+                        h=h+a*7;
+                }
+                }
+                else{
+                    h=a*2;
+                }
+            }
+            else{
+                h=h+a*4.5;
+     
+            }
+        }
+        else{
+            h=h+a*6;
+       
+        }
+        printf("Electricity Bill Amount: Rs. %.2f",h);
+    }
+    else if (b=='D'){
+        if(a>100){
+            h=h+100;
+            a=a-100;
+            if(a>100){
+                h=h+250;
+                a=a-100;
+                if(a>300){
+                    h=h+1200;
+                    a=a-300;
+                    if(a>0){
+                        h=h+a*6;
+                }
+                }
+                else{
+                    h=a*1;
+                }
+            }
+            else{
+                h=h+a*2.5;
+     
+            }
+        }
+        else{
+            h=h+a*4;
+       
+        }
+        printf("Electricity Bill Amount: Rs. %.2f",h);
+    }
+    else{
+        printf("Invalid type of EB connection. Please enter either D or C.");
+    }
+    return 0;
+}
