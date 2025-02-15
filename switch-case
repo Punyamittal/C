@@ -1,0 +1,81 @@
+/*Problem Statement
+
+
+
+Jennie is working in a bank, and her daily task is to guide the customers in filling out various bank challans. A part of this is that customers need to write the numbers in English as a representation of the digits.
+
+
+
+Jennie decided to write a program to read the number and print the number digit by digit in Word format. Help Jennie complete this task.
+
+Input format :
+The input consists of a long integer n.
+
+Output format :
+The output prints the given number in the English word representation of the digits.
+
+
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+Beginning and trial zeros will be ignored while converting.*/
+#include <stdio.h>
+#include<math.h>
+int main() 
+{
+    int a,testa,test2,rema,b=0,test,rem;
+    int count = 0;
+    scanf("%d",&a);
+    testa=a;
+    while(testa!=0)
+    {
+        testa = testa/10;
+        count = count+1;
+    }
+    test2 = a;
+    for (int i=count-1;i>=0;i--){
+        rema = test2%10;
+        b+=rema*pow(10,i);
+        test2/=10;
+    }
+    test=b;
+    while (test!=0){
+        rem = test%10;
+        switch(rem)
+        {
+            case 1:
+            printf("one ");
+            break;
+            case 2:
+            printf("two ");
+            break;
+            case 3:
+            printf("three ");
+            break;
+            case 4:
+            printf("four ");
+            break;
+            case 5:
+            printf("five ");
+            break;
+            case 6:
+            printf("six ");
+            break;
+            case 7:
+            printf("seven ");
+            break;
+            case 8:
+            printf("eight ");
+            break;
+            case 9:
+            printf("nine ");
+            break;
+            case 0:
+            printf("zero ");
+            break;
+        }
+        test=test/10;
+    }
+    return 0;
+}
