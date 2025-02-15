@@ -1,0 +1,61 @@
+/*Problem Statement
+
+
+
+Write a program that lets the user enter the total rainfall for each of the 12 months in an array. The program should calculate and display the total rainfall for the year, the average monthly rainfall, and the months with the highest and lowest amounts of rainfall.
+
+Input format :
+The input consists of a list of 12 integers that represent the value of rainfall each month, separated by space.
+
+Output format :
+The first line of output prints the total rainfall.
+
+The second line of output prints the integer that represents the average rainfall.
+
+The third line of output prints the month with the lowest rainfall.
+
+The fourth line of output prints the month with the highest rainfall.
+
+Print "Invalid input" if input values<0.
+
+
+
+Refer to the sample output for formatting specifications.*/
+
+#include<stdio.h>
+int main(){
+    int arr[12];
+    int l=0;
+    int l1=0;
+    int l2=100000;
+    int l3=0;
+    int l4=0;
+    int l5=0;
+    for (int i=0;i<12;i++){
+        scanf("%d",&arr[i]);
+        
+    }
+    for (int i=0;i<12;i++){
+        l=l+arr[i];
+        l1=l1+arr[i];
+        if (l3<arr[i]){
+            l3=arr[i];
+            l5=i+1;
+        }
+        if (l2>arr[i]){
+            l2=arr[i];
+            l4=i+1;
+        }
+    }
+    l1=l1/12;
+    if(l<=0){
+        printf("Invalid input");
+    }
+    if(l>0){
+        printf("Total rainfall : %d\n",l);
+        printf("Average rainfall : %d\n",l1);
+        printf("Lowest rainfall month : %d\n",l4);
+        printf("Highest rainfall month : %d\n",l5);
+    }
+    
+}
