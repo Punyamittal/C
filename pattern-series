@@ -1,0 +1,52 @@
+/*Consider the series given below: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987,...
+
+
+
+Write a program to find the Nth term in this series.
+
+
+
+This series is formed as below:
+
+ 1.term(1)=1
+
+ 2.term(2)=2
+
+ 3.term(N)=term(N-1)+term(N-2)for N>2
+
+
+
+The value N is a positive integer that should be read from STDIN. The Nth term that is calculated by the program should be written to STDOUT; other than the value of the Nth term, no other characters, strings, or messages should be written to STDOUT.
+
+
+
+For example, if N = 15, the value of the 15th n term is 987, which is the sum of the 13th and 14th terms.
+
+Input format :
+The input consists of an integer nth term in a series.
+
+Output format :
+The output consists of an integer representing the value of the nth term in the series. Otherwise, prints "Invalid Input".
+
+Code constraints :
+You can assume that the value of n will not exceed 30.*/
+#include<stdio.h>
+int main(){
+    int a=0,b=1,c,d;
+    c=a+b;
+    scanf("%d",&d);
+    for(int i=1;i<=d;i++){
+        a=b;
+        b=c;
+        c=a+b;
+    }
+    if(d>30){
+        printf("Invalid Input");
+        
+    }
+    else{
+        printf("%d",b);
+        
+    }
+    return 0;
+}
