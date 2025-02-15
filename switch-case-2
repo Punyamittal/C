@@ -1,0 +1,100 @@
+/*Problem Statement
+
+
+
+Write a program to implement the following based on the user’s choice.
+
+
+
+Read weekday numbers (1-7) and print weekday names (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, and Saturday) according to the given weekday number using the switch case statement. 
+Read the month value and print the total number of days in the input month.
+Input format :
+The first line of input consists of the weekday number (Sunday=1, Monday=2, Tuesday=3, Wednesday=4, Thursday=5, Friday=6, Saturday=7).
+
+The second line of input consists of the month number.
+
+Output format :
+The first line of output prints the weekday.
+
+The second line of output prints the number of days in the given month.
+
+If any invalid numbers are given as input, print "Invalid Input".
+
+Code constraints :
+1<=weekday<=7
+
+1<=month<=12*/
+#include<stdio.h>
+int main(){
+    int d,m;
+    scanf("%d",&d);
+    scanf("%d",&m);
+    if(d>8||d<0||m>12||m<0){
+        printf("Invalid Input");
+    }
+    else{
+        switch(d){
+            case 1:
+            printf("Sunday\n");
+            break;
+            case 2:
+            printf("Monday\n");
+            break;
+            case 3:
+            printf("Tuesday\n");
+            break;
+            case 4:
+            printf("Wednesday\n");
+            break;
+            case 5:
+            printf("Thursday\n");
+            break;
+            case 6:
+            printf("Friday\n");
+            break;
+            case 7:
+            printf("Saturday\n");
+            break;
+        }
+
+        switch(m){
+            case 1:
+            printf("31 Days");
+            break;
+            case 2:
+            printf("Either 28 or 29 Days in this Month");
+            break;
+            case 3:
+            printf("31 Days");
+            break;
+            case 4:
+            printf("30 Days");
+            break;
+            case 5:
+            printf("31 Days");
+            break;
+            case 6:
+            printf("30 Days");
+            break;
+            case 7:
+            printf("31 Days");
+            break;
+            case 8:
+            printf("31 Days");
+            break;
+            case 9:
+            printf("30 Days");
+            break;
+            case 10:
+            printf("31 Days");
+            break;
+            case 11:
+            printf("30 Days");
+            break;
+            case 12:
+            printf("31 Days");
+            break;
+        }
+
+    }
+}
